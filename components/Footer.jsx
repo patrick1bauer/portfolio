@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className=".footer">
-      <p className="footer-p">Cell: 239.777.7080</p>
+      <p className="footer-p">Cell: +1 (239) 961-9175</p>
       <p className="footer-p">Email: patrick1bauer@gmail.com</p>
       <p className="footer-p">© {currentYear} All Rights Reserved.</p>
     </footer>

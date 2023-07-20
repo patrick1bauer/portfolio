@@ -134,6 +134,19 @@ li.navbar {
 }
 
 /*************************************************************/
+/* ThreeScene Styles */
+
+.threescene {
+  width: 100%;
+  height: 100%;
+}
+
+.adventure-div {
+  width: 100%;
+  height: 1000px;
+}
+
+/*************************************************************/
 /* Footer Styles */
 @media (min-width: 768px) {
   footer {

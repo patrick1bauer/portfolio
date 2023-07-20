@@ -12,12 +12,12 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="navbar">
-            <Link href="/our-properties" className="navbar-Link">
+            <Link href="/experience" className="navbar-Link">
               Experience
             </Link>
           </li>
           <li className="navbar">
-            <Link href="/naples" className="navbar-Link">
+            <Link href="/adventures" className="navbar-Link">
               Adventures
             </Link>
           </li>
