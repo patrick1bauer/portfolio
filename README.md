@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Patrick Bauer's Portfolio
 
-## Getting Started
+## Description
+This web project is to showcase all the exciting things I have worked on and several things that I enjoy.
+I started this portfolio project in July 2023. I expect to learn about the following topics:
+* web based 3d rendering
+* 3d modeling
+* 3d animations
+* storytelling through technology
 
-First, run the development server:
+## Technology used for this project
+* React
+* three.js
+* Github
+* Firebase
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Ideas for what to display in the 3d environment:
+This section includes my ideas for what to display for each of my previous experiences.
+The general idea is to create a museum or art gallery to disply what I've worked on and what I enjoy.
+Inspiration for this is "The Stanley Parable Ultra Deluxe Edition" museum ending.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Professional Experience
+#### NAVAIR
+A 3d simulator of a fighter jet cockpit with monitors surrounding it. The monitors show a landscape of the flight simulation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+#### Cummings Aerospace
+A 3d table with a display of an ocean and a battleship with a hexagon shield blocking incoming missiles
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### JPMC
+A pair of 3d banks with electronic streams of data flowing between them?
 
-## Learn More
+#### BIG
+An art wall display of the website
 
-To learn more about Next.js, take a look at the following resources:
+#### Affordable Drone Photography
+An animation model of a drone taking off and landing
+An animation model of a drone hovering and taking pictures of a home
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### My Portfolio
+Showcase this portfolio within itself.
+Inception??
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Who Is Patrick Bauer
+#### Travels
+A globe model with markers for all the places I've traveled to.
+The surrounding terrain of the environment is the Italian Alps
 
-## Deploy on Vercel
+#### Video Games
+An arcade cabinet that displays my favorite games
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Music
+A way to display what music I enjoy, maybe a mix that I created.
