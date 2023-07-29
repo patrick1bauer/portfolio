@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 
@@ -33,7 +34,7 @@ function init() {
     75,
     window.innerWidth / window.innerHeight,
     1,
-    11000
+    6000
   );
   camera.position.z = 10;
   camera.position.y = 10;
@@ -72,13 +73,13 @@ function init() {
   scene.add(planeMesh);
 
   // Create Sky Dome
-    const skyDomeGeometry = new THREE.SphereGeometry(10000, 32, 32);
-    const skyDomeMaterial = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load("/skyBoxes/cloudySky.webp"),
-        side: THREE.BackSide,
-    });
-    const skyDomeMesh = new THREE.Mesh(skyDomeGeometry, skyDomeMaterial);
-    scene.add(skyDomeMesh);
+  const skyDomeGeometry = new THREE.SphereGeometry(5000, 32, 32);
+  const skyDomeMaterial = new THREE.MeshPhongMaterial({
+    map: new THREE.TextureLoader().load("/skyBoxes/cloudySky.webp"),
+    side: THREE.BackSide,
+  });
+  const skyDomeMesh = new THREE.Mesh(skyDomeGeometry, skyDomeMaterial);
+  scene.add(skyDomeMesh);
 
   // Create fog
   // scene.fog = new THREE.Fog(0xffffff, 0, 750);
@@ -91,6 +92,27 @@ function init() {
   myBoxMesh.position.y = 10;
   myBoxMesh.scale.set(5, 5, 5);
   scene.add(myBoxMesh);
+
+  // Add mountain model
+  const mossStockModelLoader = new FBXLoader();
+  mossStockModelLoader.load(
+    "/models/mossStock-2/source/MossStock.fbx",
+    (mossStockModel) => {
+      mossStockModel.scene.position.x = 0;
+      mossStockModel.scene.position.y = 0;
+      mossStockModel.scene.position.z = 0;
+      mossStockModel.scene.scale.set(999, 999, 999);
+      mossStockModel.scene.castShadow = true;
+      scene.add(mossStockModel.scene);
+      window.model = mossStockModel; // 
+    },
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    function (error) {
+      console.log(error);
+    }
+  );
 
   // Create Lamp Model
   const gltfModelLoader = new GLTFLoader();
@@ -121,9 +143,7 @@ function init() {
   scene.add(pointLight);
 
   // Directional Light helper
-  const pointLightHelper = new THREE.PointLightHelper(
-    pointLight
-  );
+  const pointLightHelper = new THREE.PointLightHelper(pointLight);
   scene.add(pointLightHelper);
 
   // Function to create a randomly generated star
