@@ -40,6 +40,9 @@ An animation model of a drone hovering and taking pictures of a home
 Showcase this portfolio within itself.
 Inception??
 
+#### Stock Analysis
+Show VOOG with a graph of the stock price over time
+
 ### Who Is Patrick Bauer
 #### Travels
 A globe model with markers for all the places I've traveled to.
