@@ -147,6 +147,8 @@ body {
   user-select: none;
 }
 
+
+
 .cta:hover {
   background: white;
   color: #757bfd;
@@ -178,7 +180,7 @@ body {
 
 #home-instructions {
   background-color: white;
-  color: #757bfd;
+  color: black;
 
   text-align: center;
   align-items: center;
@@ -215,14 +217,14 @@ body {
 .visible {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.5s linear;
 }
 
 /* Fade-Out Effect */
 .hidden {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 0.2s, opacity 0.2s linear;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
 a:hover {
@@ -314,21 +316,6 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#instructions {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  font-size: 32px;
-  cursor: pointer;
-  user-select: none;
-}
-
 /*************************************************************/
 /* Content Styles */
 
@@ -341,6 +328,7 @@ a:hover {
 
 .div-content {
   margin: 10% 20px 10% 20px;
+  padding-bottom: 16px;
 }
 
 h1 {
