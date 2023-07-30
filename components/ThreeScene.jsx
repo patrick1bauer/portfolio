@@ -32,7 +32,7 @@ function init() {
     75,
     window.innerWidth / window.innerHeight,
     1,
-    6000
+    25000
   );
   camera.position.z = 10;
   camera.position.y = 10;
@@ -104,28 +104,25 @@ function init() {
   // const gridHelper = new THREE.GridHelper(30, 30);
   // scene.add(gridHelper);
 
-  // Create plane
-  const planeGeometry = new THREE.PlaneGeometry(250, 250);
-  const planeMaterial = new THREE.MeshStandardMaterial({
-    color: 0xffffff,
+  // Create cylinder platform
+  const cylinderPlatformGeometry = new THREE.CylinderGeometry(100, 100, 80);
+  const cylinderPlatformMaterial = new THREE.MeshStandardMaterial({
+    color: 0xcbcbcb,
     side: THREE.DoubleSide, // This is needed to see the plane from both sides
   });
-  const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-  planeMesh.rotation.x = -0.5 * Math.PI; // This is needed to rotate the plane 90 degrees so it is horizontal
-  planeMesh.receiveShadow = true; // This is needed to allow the plane to receive shadows
-  scene.add(planeMesh);
+  const cylinderPlatformMesh = new THREE.Mesh(
+    cylinderPlatformGeometry,
+    cylinderPlatformMaterial
+  );
+  // cylinderPlatformMesh.rotation.x = -0.5 * Math.PI; // This is needed to rotate the plane 90 degrees so it is horizontal
+  cylinderPlatformMesh.receiveShadow = true; // This is needed to allow the plane to receive shadows
+  cylinderPlatformMesh.position.y = -40;
+  cylinderPlatformMesh.position.x = 0;
+  cylinderPlatformMesh.position.z = 0;
+  scene.add(cylinderPlatformMesh);
 
-  // Create Sky Dome
-  const skyDomeGeometry = new THREE.SphereGeometry(5000, 32, 32);
-  const skyDomeMaterial = new THREE.MeshPhongMaterial({
-    map: new THREE.TextureLoader().load("/skyBoxes/cloudySky.webp"),
-    side: THREE.BackSide,
-  });
-  const skyDomeMesh = new THREE.Mesh(skyDomeGeometry, skyDomeMaterial);
-  scene.add(skyDomeMesh);
-
-  // Create fog
-  // scene.fog = new THREE.Fog(0xffffff, 0, 750);
+  // // Create fog
+  // scene.fog = new THREE.Fog(0xffffff, 0, 13000);
 
   // Create Box
   const myBoxGeometry = new THREE.BoxGeometry();
@@ -138,15 +135,15 @@ function init() {
 
   // Add mountain model
   gltfLoader.load(
-    "/models/mossStock-1/source/MossStock.fbx",
-    (mossStockModel) => {
-      mossStockModel.scene.position.x = 0;
-      mossStockModel.scene.position.y = 0;
-      mossStockModel.scene.position.z = 0;
-      mossStockModel.scene.scale.set(999, 999, 999);
-      mossStockModel.scene.castShadow = true;
-      scene.add(mossStockModel.scene);
-      window.model = mossStockModel; //
+    "/models/mossStock/scene.gltf",
+    (model) => {
+      model.scene.position.x = -80;
+      model.scene.position.y = -750;
+      model.scene.position.z = 40;
+      model.scene.scale.set(1000, 1000, 1000);
+      model.scene.castShadow = true;
+      scene.add(model.scene);
+      window.model = model;
     },
     function (xhr) {
       console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -156,22 +153,22 @@ function init() {
     }
   );
 
-  // Create Lamp Model
-  gltfLoader.load(
-    "/models/ceilingChandelier/scene.gltf",
-    (ceilingChandelierModel) => {
-      ceilingChandelierModel.scene.position.y = 30;
-      ceilingChandelierModel.scene.scale.set(30, 30, 30);
-      ceilingChandelierModel.castShadow = true;
-      scene.add(ceilingChandelierModel.scene);
-    },
-    function (xhr) {
-      console.log((xhr.loaded / xhr.total) * 100 + "% loaded"); // This is a callback function that runs when the model is loading
-    },
-    function (error) {
-      console.log(error); // This is a callback function that runs if there is an error
-    }
-  );
+  //   // Create Lamp Model
+  //   gltfLoader.load(
+  //     "/models/ceilingChandelier/scene.gltf",
+  //     (ceilingChandelierModel) => {
+  //       ceilingChandelierModel.scene.position.y = 30;
+  //       ceilingChandelierModel.scene.scale.set(30, 30, 30);
+  //       ceilingChandelierModel.castShadow = true;
+  //       scene.add(ceilingChandelierModel.scene);
+  //     },
+  //     function (xhr) {
+  //       console.log((xhr.loaded / xhr.total) * 100 + "% loaded"); // This is a callback function that runs when the model is loading
+  //     },
+  //     function (error) {
+  //       console.log(error); // This is a callback function that runs if there is an error
+  //     }
+  //   );
 
   // Add ambient light
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -183,9 +180,22 @@ function init() {
   pointLight.castShadow = true; // This is needed to allow the directional light to cast shadows
   scene.add(pointLight);
 
-  // Directional light helper
+  // Point light helper
   const pointLightHelper = new THREE.PointLightHelper(pointLight);
   scene.add(pointLightHelper);
+
+  // Add spot light
+  const spotLight = new THREE.SpotLight(0xf4b843, 0.5);
+  spotLight.position.set(40, 50, 30);
+  spotLight.castShadow = true; // This is needed to allow the directional light to cast shadows
+  spotLight.angle = Math.PI / 5;
+  spotLight.penumbra = 0.5;
+  spotLight.intensity = 1;
+  scene.add(spotLight);
+
+  // Spot light helper
+  const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+  scene.add(spotLightHelper);
 
   // Function to create a randomly generated star
   function addStar() {
@@ -203,13 +213,13 @@ function init() {
     scene.add(star);
   }
 
-  // Create stars
-  Array(2000).fill().forEach(addStar);
+  //   // Create stars
+  //   Array(2000).fill().forEach(addStar);
 
-  // Create a background
-  scene.background = new THREE.TextureLoader().load(
-    "/images/sky-background.jpg"
-  );
+  //   // Create a background
+  //   scene.background = new THREE.TextureLoader().load(
+  //     "/images/sky-background.jpg"
+  //   );
 
   // Add event listeners to allow the user to move around the scene
   const onkeyDown = function (event) {
@@ -268,36 +278,6 @@ function init() {
     0,
     10
   );
-
-  //   // Create Floor
-  //   let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
-  //   floorGeometry.rotateX(-Math.PI / 2);
-
-  //   // Vertex displacement for floor
-  //   let position = floorGeometry.attributes.position;
-  //   for (let i = 0, l = position.count; i < l; i++) {
-  //     vertex.fromBufferAttribute(position, i);
-  //     vertex.x += Math.random() * 20 - 10;
-  //     vertex.y += Math.random() * 5;
-  //     vertex.z += Math.random() * 20 - 10;
-  //     position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  //   }
-
-  //   floorGeometry = floorGeometry.toNonIndexed(); // Ensure each face has unique vertices
-  //   position = floorGeometry.attributes.position;
-  //   const colors = [];
-  //   for (let i = 0, l = position.count; i < l; i++) {
-  //     color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
-  //     colors.push(color.r, color.g, color.b);
-  //   }
-
-  //   floorGeometry.setAttribute(
-  //     "color",
-  //     new THREE.Float32BufferAttribute(colors, 3)
-  //   );
-  //   const floorMaterial = new THREE.MeshBasicMaterial({ vertexColors: true });
-  //   const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-  //   scene.add(floor);
 
   // This allows the user to resize the window and have the scene adjust to the new window size
   window.addEventListener("resize", () => {
