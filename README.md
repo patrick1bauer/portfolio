@@ -53,3 +53,6 @@ An arcade cabinet that displays my favorite games
 
 #### Music
 A way to display what music I enjoy, maybe a mix that I created.
+
+#### Guest Wall
+A wall that displays all the people that have visited my portfolio
