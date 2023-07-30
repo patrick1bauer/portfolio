@@ -9,7 +9,7 @@ export default function Contact() {
             <a href="/">Patrick Bauer</a> / Contact
         </p2>
         <br />
-        <h1>Send me a text or email, give me a call, add me on LinkedIn. I'm always open to talk.</h1>
+        <h1>Send me a text or email, give me a call, add me on LinkedIn. I'm always open to talk about anything and everything</h1>
         <br />
         <p2>patrick1bauer@gmail.com</p2>
         <br />

@@ -6,15 +6,19 @@ export default function Home() {
     <>
       <div id="loadingscreen">
         <div id="loader-wrapper">
-          <div class="title">Welcome!</div>
+          <div id="home-title">Patrick Bauer</div>
+          <h1 id="home-description">
+            Software Engineer, World Traveler, EDM Enthusiast
+          </h1>
           <div id="progress">
             <span id="loading">Loading...</span>
             <div id="progress-bar" />
           </div>
-          <button class="button cta" id="start-button" href="#start">
-            Enter
+          <button className="button cta" id="start-button" href="#start">
+            Click to Explore
           </button>
         </div>
+        <SideNav />
       </div>
 
       <div id="logo">
@@ -23,20 +27,13 @@ export default function Home() {
         Bauer
       </div>
 
-      <SideNav />
-
-      <div id="blocker">
-        <div id="instructions">
-          <p>Click to Explore</p>
-          <p>
-            Move: WASD or Arrow Keys
-            <br />
-            Jump: SPACE
-            <br />
-            Look: MOUSE
-          </p>
-        </div>
+      <div id="home-instructions">
+        <p>Move: WASD or Arrow Keys</p>
+        <p>Jump: Space</p>
+        <p>Look: Mouse</p>
+        <p>Leave: ESC</p>
       </div>
+
       <ThreeScene />
     </>
   );

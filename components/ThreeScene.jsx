@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 
@@ -22,8 +22,6 @@ let canJump = false;
 let prevTime = performance.now();
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
-const vertex = new THREE.Vector3();
-const color = new THREE.Color();
 
 function init() {
   // Create the scene
@@ -49,6 +47,51 @@ function init() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   sceneRef.current.appendChild(renderer.domElement);
 
+  // Loaders
+  const loadingManager = new THREE.LoadingManager();
+  const progressContainer = document.getElementById("progress");
+  const progressBar = document.getElementById("progress-bar");
+
+  // Display the update the progress bar as the scene loads
+  loadingManager.onProgress = function (url, loaded, total) {
+    progressBar.style.width = (loaded / total) * 100 + "%";
+  };
+
+  // When the scene is finished loading, hide the progress bar and show the start button
+  loadingManager.onLoad = function () {
+    progressContainer.style.display = "none";
+    document.getElementById("start-button").style.display = "flex";
+  };
+
+  // Create the controls for the user
+  controls = new PointerLockControls(camera, renderer.domElement);
+
+  // Get the div elements of the instructions and blocker
+  const startButton = document.getElementById("start-button");
+  const loadingScreen = document.getElementById("loadingscreen");
+
+  // Add event listeners to lock the pointer when the user clicks on the scene
+  startButton.addEventListener("click", () => {
+    controls.lock();
+  });
+  controls.addEventListener("lock", () => {
+    loadingScreen.classList.add("hidden");
+    loadingScreen.classList.remove("visible");
+  });
+  controls.addEventListener("unlock", () => {
+    loadingScreen.classList.remove("hidden");
+    loadingScreen.classList.add("visible");
+  });
+  scene.add(controls.getObject());
+
+  // Draco Loader
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath("/draco/");
+
+  // GLTF Loader
+  const gltfLoader = new GLTFLoader(loadingManager);
+  gltfLoader.setDRACOLoader(dracoLoader);
+
   // // Create orbit that allows for user camera movement
   // const orbit = new OrbitControls(camera, renderer.domElement);
   // orbit.update();
@@ -64,7 +107,7 @@ function init() {
   // Create plane
   const planeGeometry = new THREE.PlaneGeometry(250, 250);
   const planeMaterial = new THREE.MeshStandardMaterial({
-    color: 0x9cd190,
+    color: 0xffffff,
     side: THREE.DoubleSide, // This is needed to see the plane from both sides
   });
   const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -94,9 +137,8 @@ function init() {
   scene.add(myBoxMesh);
 
   // Add mountain model
-  const mossStockModelLoader = new FBXLoader();
-  mossStockModelLoader.load(
-    "/models/mossStock-2/source/MossStock.fbx",
+  gltfLoader.load(
+    "/models/mossStock-1/source/MossStock.fbx",
     (mossStockModel) => {
       mossStockModel.scene.position.x = 0;
       mossStockModel.scene.position.y = 0;
@@ -104,7 +146,7 @@ function init() {
       mossStockModel.scene.scale.set(999, 999, 999);
       mossStockModel.scene.castShadow = true;
       scene.add(mossStockModel.scene);
-      window.model = mossStockModel; // 
+      window.model = mossStockModel; //
     },
     function (xhr) {
       console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -115,8 +157,7 @@ function init() {
   );
 
   // Create Lamp Model
-  const gltfModelLoader = new GLTFLoader();
-  gltfModelLoader.load(
+  gltfLoader.load(
     "/models/ceilingChandelier/scene.gltf",
     (ceilingChandelierModel) => {
       ceilingChandelierModel.scene.position.y = 30;
@@ -142,7 +183,7 @@ function init() {
   pointLight.castShadow = true; // This is needed to allow the directional light to cast shadows
   scene.add(pointLight);
 
-  // Directional Light helper
+  // Directional light helper
   const pointLightHelper = new THREE.PointLightHelper(pointLight);
   scene.add(pointLightHelper);
 
@@ -169,27 +210,6 @@ function init() {
   scene.background = new THREE.TextureLoader().load(
     "/images/sky-background.jpg"
   );
-
-  // Create the controls for the user
-  controls = new PointerLockControls(camera, renderer.domElement);
-
-  // Get the div elements of the instructions and blocker
-  const instructions = document.getElementById("instructions");
-  const blocker = document.getElementById("blocker");
-
-  // Add event listeners to lock the pointer when the user clicks on the scene
-  instructions.addEventListener("click", () => {
-    controls.lock();
-  });
-  controls.addEventListener("lock", () => {
-    instructions.style.display = "none";
-    blocker.style.display = "none";
-  });
-  controls.addEventListener("unlock", () => {
-    blocker.style.display = "block";
-    instructions.style.display = "";
-  });
-  scene.add(controls.getObject());
 
   // Add event listeners to allow the user to move around the scene
   const onkeyDown = function (event) {

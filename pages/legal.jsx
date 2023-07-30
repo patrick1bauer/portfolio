@@ -40,7 +40,7 @@ export default function Legal() {
           By using patrickbauer.net, you hereby consent to the disclaimer and
           agree to all its terms.
         </p2>
-        <br />
+        {/* <br />
         <h2>Security</h2>
         <br />
         <p2>
@@ -81,7 +81,7 @@ export default function Legal() {
           information we have about you, register a complaint, or simply want
           more information contact me at patrick1bauer@gmail.com.
         </p2>
-        <br />
+        <br /> */}
       </div>
     </div>
   );
