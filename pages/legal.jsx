@@ -11,7 +11,32 @@ export default function Legal() {
         <br />
         <h1>Credits</h1>
         <br />
-        <p2></p2>
+        <p2>
+          "Basic Missle" (https://skfb.ly/6WSWD) by Blender3D is licensed under
+          Creative Commons Attribution
+          (http://creativecommons.org/licenses/by/4.0/).
+        </p2>
+        <p2>
+          "German aircraft carrier Graf Zeppelin (low poly)"
+          (https://skfb.ly/otvBo) by Götz von Berlichingen is licensed under
+          Creative Commons Attribution
+          (http://creativecommons.org/licenses/by/4.0/).
+        </p2>
+        <p2>
+          "Carrier Scene" (https://skfb.ly/6YS79) by Usman Zia is licensed under
+          Creative Commons Attribution
+          (http://creativecommons.org/licenses/by/4.0/).
+        </p2>
+        <p2>
+          "water waves" (https://skfb.ly/67zU9) by UJJWAL CHAUHAN is licensed
+          under Creative Commons Attribution
+          (http://creativecommons.org/licenses/by/4.0/).
+        </p2>
+        <p2>
+          "water_wave for AR" (https://skfb.ly/oBTFX) by Zinaida.Kovrova is
+          licensed under Creative Commons Attribution
+          (http://creativecommons.org/licenses/by/4.0/).
+        </p2>
         <h1>Disclaimer</h1>
         <br />
         <p2>
