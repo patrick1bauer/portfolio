@@ -1,0 +1,11 @@
+Model Information:
+* title:	water_wave for AR
+* source:	https://sketchfab.com/3d-models/water-wave-for-ar-ed1507642e7e488fa0ae55528c2c1be6
+* author:	Zinaida.Kovrova (https://sketchfab.com/Zinaida.Kovrova)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "water_wave for AR" (https://sketchfab.com/3d-models/water-wave-for-ar-ed1507642e7e488fa0ae55528c2c1be6) by Zinaida.Kovrova (https://sketchfab.com/Zinaida.Kovrova) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
