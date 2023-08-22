@@ -15,7 +15,7 @@ export default function About() {
         <br />
         <p2>Missile Defense Systems <a href="https://www.rtx.com/raytheon/what-we-do/strategic-missile-defense" target="_blank">@Cummings Aerospace / Raytheon</a></p2>
         <br />
-        <p2>Pilot Flight Simulators <a href="https://www.navair.navy.mil/nawctsd/" target="_blank">@NAVAIR</a></p2>
+        <p2>Navy Flight Simulators <a href="https://www.navair.navy.mil/nawctsd/" target="_blank">@NAVAIR</a></p2>
         <br />
         <p2>Drone Pilot <a href="http://www.affordabledronephotography.com/" target="_blank">@Affordable Drone Photography</a></p2>
         <br />
