@@ -27,7 +27,7 @@ A 3d simulator of a fighter jet cockpit with monitors surrounding it. The monito
 A 3d table with a display of an ocean and a battleship with a hexagon shield blocking incoming missiles
 
 #### JPMC
-A pair of 3d banks with electronic streams of data flowing between them?
+Two piles of coins that grow and shrink. Each pile represents a different currency.
 
 #### BIG
 An art wall display of the website
