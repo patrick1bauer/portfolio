@@ -107,6 +107,17 @@ a:hover {
   cursor: pointer;
 }
 
+img {
+  border-radius: 50%;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 /* Small screen content styles */
 
 @media only screen and (max-width: 600px) {
@@ -132,5 +143,9 @@ a:hover {
 
   li {
     font-size: 16px;
+  }
+
+  img {
+    width: 80%;
   }
 }
