@@ -87,12 +87,9 @@ export default function Home() {
         </details>
 
         <h1>Education</h1>
-        <details>
-          <summary>AWS Certified Cloud Practitioner <a href="https://www.credly.com/badges/10a4e777-84f9-4dbc-8cea-93b7c7bbdd7b/linked_in_profile" target="_blank">@AWS</a></summary>
-          <br />
-          <div className="div-detailsinside">
-          </div>
-        </details>
+        
+        <summary>AWS Certified Cloud Practitioner <a href="https://www.credly.com/badges/10a4e777-84f9-4dbc-8cea-93b7c7bbdd7b/linked_in_profile" target="_blank">@AWS</a></summary>
+
         <details>
           <summary>BS in Computer Science <a href="https://www.ucf.edu/" target="_blank">@University of Central Florida</a></summary>
           <br />

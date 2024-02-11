@@ -1,4 +1,5 @@
 /* Body Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -73,27 +74,14 @@ h1 {
   margin-top: 32px;
 }
 
-h2 {
+h2, summary {
   font-size: 24px;
   font-weight: 300;
   line-height: 120%;
   margin-top: 16px;
 }
 
-summary {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 120%;
-  margin-top: 16px;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 140%;
-}
-
-p {
+h3, p {
   font-size: 20px;
   font-weight: 300;
   line-height: 140%;
@@ -115,6 +103,8 @@ a:hover {
   cursor: pointer;
 }
 
+/* Small screen content styles */
+
 @media only screen and (max-width: 600px) {
   #home-title {
     font-size: 64px;
@@ -125,30 +115,18 @@ a:hover {
   }
 
   h1 {
+    font-size: 32px;
+  }
+
+  h2, summary {
     font-size: 24px;
   }
 
-  h2 {
-    font-size: 24px;
-  }
-
-  summary {
-    font-size: 24px;
-  }
-
-  h3 {
-
-  }
-
-  p {
+  h3, p {
     font-size: 16px;
   }
 
-  ul {
-
-  }
-
   li {
-
+    font-size: 16px;
   }
 }
