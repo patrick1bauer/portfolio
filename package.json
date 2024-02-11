@@ -1,36 +1,23 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
-    "serve": "firebase emulators:start",
     "dev": "next dev",
-    "deploy": "firebase deploy --only hosting",
     "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint ."
+    "start": "next start"
   },
   "keywords": [],
   "dependencies": {
-    "firebase": "^8.6.8",
-    "framer-motion": "^8.5.4",
-    "next": "^13.1.6",
-    "postcss": "^8.4.26",
+    "firebase": "^10.8.0",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-firebase-hooks": "^3.0.5",
-    "react-icons": "^4.7.1",
-    "react-particles": "^2.8.0",
-    "three": "^0.152.2"
+    "react-firebase-hooks": "^5.1.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
-    "eslint": "^8.33.0",
-    "eslint-config-next": "^13.1.6",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-tailwindcss": "^3.8.2",
-    "firebase-tools": "^12.4.5",
-    "prettier": "^2.8.3"
+    "firebase-tools": "^13.2.1"
   }
 }
