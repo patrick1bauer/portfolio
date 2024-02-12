@@ -5,7 +5,7 @@ export default function Home() {
     <div className="div-component">
       <div className="div-content">
         <div id="home-title">Patrick Bauer</div>
-        <img src="pictures/Profile_Picture.jpg" alt="Profile Picture" />
+        <img src="pictures/Profile_Picture.webp" alt="Profile Picture" />
         <h1 id="home-description">Software Engineer, World Traveler</h1>
 
         <h1>Bleeding-Edge Projects</h1>
