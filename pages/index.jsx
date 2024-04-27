@@ -17,7 +17,7 @@ export default function Home() {
           <br />
           <ul>
             <li>Enabled LatAm JPMC global cross-border payments with a projected revenue stream of 1.2 billion USD by 2025.</li>
-            <li>Created scalable, robust, Java Springboot applications deployed on Kubernetes with Jules CI/CD pipelines.</li>
+            <li>Application owner of scalable, robust, Java Springboot applications deployed on Kubernetes with Jules CI/CD pipelines.</li>
             <li>Implemented new REST API endpoints to Cross-Border payments apps to enable automated regression testing.</li>
             <li>Achieved unit test code coverage of 98% using JUnit framework.</li>
             <li>Used Bitbucket for version control, Jules pipelines for automation, and Jira for agile project management.</li>
