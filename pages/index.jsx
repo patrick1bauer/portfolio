@@ -104,7 +104,7 @@ export default function Home() {
         </div>
 
         <h1>World Travels</h1>
-        <h2>USA, Mexico, Canada, Peru, South Africa, Poland, Czechia, United Kingdom, Germany, Austria, Spain, Hungary, Switzerland, Italy, Romania, France, Belgium, Netherlands, Turkey, Dominican Republic</h2>
+        <h2>USA, Mexico, Canada, Peru, South Africa, Poland, Czechia, United Kingdom, Germany, Austria, Spain, Hungary, Switzerland, Italy, Romania, France, Belgium, Netherlands, Turkey, Dominican Republic, Argentina</h2>
 
         <h1>Let's Connect</h1>
         <h2><CopyText text="+1 (239) 961-9175" feedbackMessage="Phone copied to clipboard!"/></h2>
