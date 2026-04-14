@@ -4,4 +4,8 @@ module.exports = {
     return "build-id";
   },
   output: "export",
+  images: {
+    unoptimized: true,
+  },
+  allowedDevOrigins: ["localhost:3000"],
 };
