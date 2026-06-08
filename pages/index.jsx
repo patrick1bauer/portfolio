@@ -16,11 +16,16 @@ export default function Home() {
           <h3>Software Engineer II, July 2022 - Present</h3>
           <br />
           <ul>
-            <li>Enabled LatAm JPMC global cross-border payments with a projected revenue stream of 1.2 billion USD by 2025.</li>
-            <li>Application owner of scalable, robust, Java Springboot applications deployed on Kubernetes with Jules CI/CD pipelines.</li>
-            <li>Implemented new REST API endpoints to Cross-Border payments apps to enable automated regression testing.</li>
-            <li>Achieved unit test code coverage of 98% using JUnit framework.</li>
-            <li>Used Bitbucket for version control, Jules pipelines for automation, and Jira for agile project management.</li>
+            <li>Projects: Global Mass Payments, Brazil Insourcing, Brazil Outsourcing, Chile Modernization, Brazil QR Payments, Chile incoming & outgoing wires, Chile tax payments.</li>
+            <li>Application Owner - Java Springboot payment router to send Brazil pay-out transactions for sanctions, funds control, and reporting deployed on Kubernetes.</li>
+            <li>Release Lead - Managed release cuts, regression testing, and stakeholder communication for major global code releases.</li>
+            <li>Tech Lead - Owned projects end to end from translating requirements from business analysts to actionable Jira tickets for the team to work, to deploying completed features and supporting the testing team.</li>
+            <li>Engineered custom Model Context Protocol (MCP) servers and AI agents to automate software development life cycle workflows, integrating Jira, Confluence, and Bitbucket to streamline epic analysis, story creation, documentation review, and PR management.</li>
+            <li>Created Java applications for collecting and storing client information and reference data for Brazil QR code payments.</li>
+            <li>Designed scalable, robust, Java Spring Boot apps deployed on Kubernetes, AWS, and On-premise servers using Jules CI/CD</li>
+            <li>Saved thousands of hours of manual testing time by implementing new REST API endpoints to Cross-Border payments apps to enable automated regression testing using Gherkin and Cucumber.</li>
+            <li>Implemented regression test suite from scratch to ensure Chile outgoing wires, incoming wires, and tax payment code changes meet business requirements.</li>
+            <li>Achieved unit test code coverage of 100% using JUnit framework for all new Java code.</li>
             <li>DevOps: Provisioned Kubernetes infrastructure for the team's development, testing, and production environments.</li>
           </ul>
         </div>
